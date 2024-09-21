@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board Foot Calculator – Easily Calculate Lumber Volume in Board Feet</title>
+    <meta name="description" content="Use our board foot calculator to quickly determine the volume of wood or lumber in board footage. Simplify your calculations and get accurate results for your woodworking projects.">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    
+</head>
+<body class="bg-gray-100">
+    <main class="container mx-auto px-4 py-8">
+        <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md">
+            <h1 class="text-3xl font-bold mb-6">Board Foot Calculator</h1>
+            
+            <div class="flex justify-between mb-8">
+                <img src="board_diagram.png" alt="Board Diagram" class="w-1/2">
+                <div class="w-1/2 space-y-4">
+                    <div>
+                        <label for="length" class="block mb-1">Length</label>
+                        <div class="flex">
+                            <input type="number" id="length" class="w-2/3 border rounded-l px-3 py-2" value="1">
+                            <select class="w-1/3 border rounded-r px-3 py-2 bg-gray-100" id="lengthSelect">
+                                <option>in</option>
+                                <option>ft</option>
+                                <option>yd</option>
+                                <option>cm</option>
+                                <option>m</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="width" class="block mb-1">Width</label>
+                        <div class="flex">
+                            <input type="number" id="width" class="w-2/3 border rounded-l px-3 py-2" value="1">
+                            <select class="w-1/3 border rounded-r px-3 py-2 bg-gray-100" id="widthSelect" >
+                                <option>in</option>
+                                <option>ft</option>
+                                <option>yd</option>
+                                <option>cm</option>
+                                <option>m</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="thickness" class="block mb-1">Thickness</label>
+                        <div class="flex">
+                            <input type="number" id="thickness" class="w-2/3 border rounded-l px-3 py-2" value="1">
+                            <select class="w-1/3 border rounded-r px-3 py-2 bg-gray-100" id="thicknessSelect">
+                                <option>in</option>
+                                <option>ft</option>
+                                <option>yd</option>
+                                <option>cm</option>
+                                <option>m</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="boards" class="block mb-1">Number of Boards</label>
+                        <input type="number" id="boards" class="w-full border rounded px-3 py-2" value="1">
+                    </div>
+                </div>
+            </div>
+            
+            <button id="calculate" class="w-full bg-black text-white py-3 rounded font-semibold">Calculate</button>
+            
+            <div id="result" class="mt-8 bg-gray-100 p-6 rounded hidden">
+                <h2 class="text-xl font-semibold mb-2">Board Feet</h2>
+                <p class="text-5xl font-bold text-orange-500">0.01</p>
+            </div>
+        </div>
+
+        <section>
+            <!-- Container -->
+            <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-20">
+              <!-- Title -->
+              <p class="text-center text-sm font-bold uppercase">3 easy steps</p>
+              <h2 class="text-center text-3xl font-bold md:text-5xl"> How it works </h2>
+              <p class="mx-auto mb-8 mt-4 max-w-lg text-center text-sm text-gray-500 sm:text-base md:mb-12 lg:mb-16"> Best Board Foot Calculator </p>
+              <!-- Content -->
+              <div class="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+                <!-- List -->
+                <div class="flex h-full flex-col [grid-area:2/1/3/2] lg:[grid-area:1/2/2/3]">
+                  <!-- Item -->
+                  <a class="mb-8 flex max-w-lg justify-center gap-4 rounded-xl border border-solid border-gray-300 px-6 py-5 text-black" href="#w-tabs-0-data-w-pane-0">
+                    <div class="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-gray-100">
+                      <p class="text-sm font-bold sm:text-base">1</p>
+                    </div>
+                    <div class="ml-4 flex flex-col gap-2">
+                      <h3 class="text-xl font-bold">How to use Board Foot Calculator?</h3>
+                      <p class="text-sm text-gray-500">Please feel free to confirm the measurement unit, this board foot calculator accepts (in,ft,yd,cm,m), and will automatically convert it to in for you  </p>
+                    </div>
+                  </a>
+                  <!-- Item -->
+                  <a class="mb-8 flex max-w-lg justify-center gap-4 px-6 py-5 text-black" href="#w-tabs-0-data-w-pane-1">
+                    <div class="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-gray-100">
+                      <p class="text-sm font-bold sm:text-base">2</p>
+                    </div>
+                    <div class="ml-4 flex flex-col gap-2">
+                      <h3 class="text-xl font-bold">Determine the length, width and thickness of your board</h3>
+                      <p class="text-sm text-gray-500">This board foot calculator lets you quickly estimate the volume of hardwood lumber you want to purchase. If you're uncertain about how to calculate board feet or what a board foot is, scroll down for detailed information. Otherwise, just enter the dimensions of your wood piece into the board foot calculator!</p>
+                    </div>
+                  </a>
+                  <!-- Item -->
+                  <a class="mb-8 flex max-w-lg justify-center gap-4 px-6 py-5 text-black" href="#w-tabs-0-data-w-pane-2">
+                    <div class="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-gray-100">
+                      <p class="text-sm font-bold sm:text-base">3</p>
+                    </div>
+                    <div class="ml-4 flex flex-col gap-2">
+                      <h3 class="text-xl font-bold">Done</h3>
+                      <p class="text-sm text-gray-500"> A board foot is a volume unit traditionally used for timber, equal to 144 cubic inches, which is the size of a piece measuring 12 inches long, 12 inches wide, and 1 inch thick.</p>
+                    </div>
+                  </a>
+                </div>
+                <!-- Image -->
+                <img alt="" src="lumberYard.jpg" />
+              </div>
+            </div>
+          </section>
+
+
+        <section>
+         <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-20">
+            <h2 class="mx-auto text-center font-bold text-black text-xl lg:text-3xl">What's a board foot, anyway?</h2>
+            <p class="font-inter mt-4 text-base font-light text-gray-500 text-xl">Unlike square footage, which measures area, board footage measures volume. It’s used when buying lumber in different sizes.<br> 
+                By definition, one board foot of lumber equals one square foot that is one inch thick. To convert standard volume units into board feet,except our board foot calculator,you can use this formula:<br>
+                1 board foot = 144 cubic inches = 1/12 cubic foot
+            </p>
+            <h2 class="mx-auto text-center font-bold text-black text-xl lg:text-3xl mt-10">How do your Board Foot Calculator to calculate board feet?</h2>
+            <p class="font-inter mt-4 text-center font-light text-gray-500 text-xl">Board Feet = Width (in inches) × Length (in inches) × Thickness (in inches) ÷ 144 </p>
+            <h2 class="mx-auto text-center font-bold text-black text-xl lg:text-3xl mt-10">BTW,Board Foot Calculator It's Just an Estimation</h2>
+            <p class="font-inter mt-4 text-base font-light text-gray-500 text-xl">Board footage helps you estimate how much lumber you'll need for a project, especially since you'll be cutting or gluing pieces from boards of different sizes.<br>
+
+                It's always wise to buy extra lumber to ensure you're covered for cutting parts, gluing to width, aligning grain patterns and color, fixing mistakes, making test cuts for joinery, and testing finishes.</p>
+
+        </div>
+        </section>
+
+
+    <section>
+    <!-- Container -->
+    <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-20">
+      <!-- Component -->
+      <div class="mx-auto flex max-w-xl flex-col items-center justify-center px-6 text-center lg:max-w-3xl lg:px-10">
+        <h2 class="mx-auto text-center font-bold text-black text-3xl lg:text-5xl"> Common Lumber Applications and Their Board Foot Calculations </h2>
+      </div>
+      <!-- FAQs -->
+      <div class="mt-10 flex flex-col justify-between lg:flex-row lg:flex-wrap">
+        <!-- FAQ CONTAINER LEFT -->
+        <div class="mx-4 flex max-w-3xl flex-col lg:shrink lg:grow lg:basis-96">
+          <!-- FAQ BLOCK -->
+          <div class="relative my-3 w-full rounded-md border border-gray-300 px-12 py-8">
+            <h2 class="font-bold text-black text-xl"> Deck Building Board Foot Calculatoion </h2>
+            <p class="font-inter mt-4 text-base font-light text-gray-500"> Softwoods like cedar or pine are commonly used for decking. When building a deck with 2x6 planks, knowing how to calculate board feet can help estimate costs, even when lumber is sold by linear feet. For example, a 2x6 plank, which measures 1.5 inches thick and 5.5 inches wide, equals 0.763 board feet per linear foot.</p>
+            <a href="" class="absolute right-5 top-9">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="12" fill="white"></circle>
+                <path d="M7.04688 11.9999H16.9469" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </a>
+          </div>
+          <!-- FAQ BLOCK -->
+          <div class="relative my-3 w-full rounded-md border border-gray-300 px-12 py-8">
+            <h2 class="font-bold text-black text-xl"> Cabinetry Board Foot Calculation </h2>
+            <p class="font-inter mt-4 text-base font-light text-gray-500">Hardwoods such as oak, cherry, or walnut are popular choices for crafting elegant cabinets. When a millwork contractor purchases wood that is 3/4 inch thick (a standard size for cabinet facings) and 8 inches wide, each linear foot of the material equals 0.5 board feet.</p>  
+            <a href="" class="absolute right-5 top-9">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="12" fill="white"></circle>
+                <path d="M7.05078 12H16.9508" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M12 7.05005V16.95" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </a>
+          </div>
+          <!-- FAQ BLOCK -->
+        </div>
+        <!-- FAQ CONTAINER RIGHT -->
+        <div class="mx-4 flex max-w-3xl flex-col lg:shrink lg:grow lg:basis-96">
+          <!-- FAQ BLOCK -->
+          <div class="relative my-3 w-full rounded-md border border-gray-300 px-12 py-8">
+            <h2 class="font-bold text-black text-xl"> Custom Furniture Board Foot Calculation </h2>
+            <p class="font-inter mt-4 text-base font-light text-gray-500">To build a dining table using a maple slab that's 2 inches thick and averages 30 inches wide over a 6-foot length, the builder would require 30 board feet of wood.<br>
+                Here's the calculation:<br>
+                30 in × 72 in × 2 in ÷ 144 = 30 board feet.</p>
+            <a href="" class="absolute right-5 top-9">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="12" fill="white"></circle>
+                <path d="M7.05078 12H16.9508" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M12 7.05005V16.95" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </a>
+          </div>
+          <!-- FAQ BLOCK -->
+        
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    </main>
+
+<footer class="block">
+    <!-- Container -->
+    <div class="py-16 md:py-20 mx-auto w-full max-w-7xl px-5 md:px-10">
+      <!-- Component -->
+      <div class="flex-col flex items-center">
+        <a href="#" class="mb-8 inline-block max-w-full text-black">
+          <img src="footer-logo.png" alt="Board Foot Calculator" class="inline-block max-h-20" />
+        </a>
+        <div class="mb-8 mt-8 border-b border-gray-300 w-48"></div>
+        <div class="mb-12 grid-cols-4 grid-flow-col grid w-full max-w-52 gap-3">
+          <a href="#" class="mx-auto flex-col flex max-w-6 items-center justify-center text-black">
+            <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a945b4ae6cf7b_Vector-1.svg" alt="" class="inline-block" />
+          </a>
+          <a href="#" class="mx-auto flex-col flex max-w-6 items-center justify-center text-black">
+            <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a945560e6cf77_Vector.svg" alt="" class="inline-block" />
+          </a>
+          <a href="#" class="mx-auto flex-col flex max-w-6 items-center justify-center text-black">
+            <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a940535e6cf7a_Vector-3.svg" alt="" class="inline-block" />
+          </a>
+          <a href="#" class="mx-auto flex-col flex max-w-6 items-center justify-center text-black">
+            <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a9433a9e6cf88_Vector-2.svg" alt="" class="inline-block" />
+          </a>
+        </div>
+        <p class="text-sm sm:text-base"> © Copyright 2024. All rights reserved. </p>
+      </div>
+    </div>
+  </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
