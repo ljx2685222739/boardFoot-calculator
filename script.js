@@ -1,3 +1,5 @@
+import { inject } from "@vercel/analytics";
+inject();
 const calculateBtn = document.getElementById("calculate");
 const resultElement = document.getElementById("result");
 const resultValueElement = resultElement.querySelector("p");
